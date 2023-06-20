@@ -1,0 +1,13 @@
+#spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+
+#camunda.bpm.admin-user:
+ # id: demo
+  #password: demo
+
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=demo
+spring.datasource.password=demo
+#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+camunda.bpm.auto-deployment-enabled=false
+

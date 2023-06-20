@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://bpmn.io/schema/bpmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="Camunda Modeler" exporterVersion="5.11.0" expressionLanguage="http://www.w3.org/1999/XPath" id="Definitions_0fr9mxs" name="" targetNamespace="http://bpmn.io/schema/bpmn" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <bpmn:process id="ghanshyam" isClosed="false" isExecutable="true" name="ghanshyam-process" processType="None">
+    <bpmn:extensionElements>
+      <yaoqiang:description/>
+      <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
+      <yaoqiang:page background="#FFFFFF" horizontalCount="1" verticalCount="1"/>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" isInterrupting="true" name="involve in revolution" parallelMultiple="false">
+      <bpmn:outgoing>SequenceFlow_1fp17al</bpmn:outgoing>
+      <bpmn:outputSet/>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1fp17al" sourceRef="StartEvent_1" targetRef="say-hello"/>
+    <bpmn:userTask camunda:candidateUsers="demo" camunda:formRef="preparefordeparter.form" camunda:formRefBinding="latest" completionQuantity="1" id="say-hello" implementation="##unspecified" isForCompensation="false" name="Prepare for departure" startQuantity="1">
+      <bpmn:extensionElements>
+        <camunda:taskListener event="create"/>
+        <camunda:taskListener event="create"/>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zgh6q8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0zgh6q8" sourceRef="say-hello" targetRef="Activity_1i1b3tb"/>
+    <bpmn:sequenceFlow id="Flow_0i1skco" sourceRef="Activity_1i1b3tb" targetRef="Activity_02ni8t3"/>
+    <bpmn:userTask camunda:formKey="getTaxy.form" completionQuantity="1" id="Activity_1i1b3tb" implementation="##unspecified" isForCompensation="false" name="take a taxy" startQuantity="1">
+      <bpmn:incoming>Flow_0zgh6q8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i1skco</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_11dos05" name="hello helped a revolution">
+      <bpmn:incoming>Flow_0lbwl3l</bpmn:incoming>
+      <bpmn:inputSet/>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0lbwl3l" sourceRef="Activity_02ni8t3" targetRef="Event_11dos05"/>
+    <bpmn:task completionQuantity="1" id="Activity_02ni8t3" isForCompensation="false" name="overthrow the monarch" startQuantity="1">
+      <bpmn:incoming>Flow_0i1skco</bpmn:incoming>
+      <bpmn:outgoing>Flow_0lbwl3l</bpmn:outgoing>
+    </bpmn:task>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Yaoqiang_Diagram-ghanshyam" name="Untitled Diagram" resolution="96.0">
+    <bpmndi:BPMNPlane bpmnElement="ghanshyam">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_1" id="Yaoqiang-StartEvent_1">
+        <dc:Bounds height="32.0" width="32.0" x="179.0" y="99.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="122.0" x="136.0" y="146.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="say-hello" id="Yaoqiang-say-hello">
+        <dc:Bounds height="80.0" width="100.0" x="270.0" y="77.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.8" width="71.0" x="284.5" y="102.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_02ni8t3" id="Yaoqiang-Activity_02ni8t3">
+        <dc:Bounds height="80.0" width="100.0" x="590.0" y="77.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.8" width="86.0" x="597.0" y="102.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1i1b3tb" id="Yaoqiang-Activity_1i1b3tb">
+        <dc:Bounds height="80.0" width="100.0" x="430.0" y="77.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="70.0" x="445.0" y="109.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_11dos05" id="Yaoqiang-Event_11dos05">
+        <dc:Bounds height="32.0" width="32.0" x="752.0" y="99.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="147.0" x="697.0" y="146.08"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0zgh6q8" id="Yaoqiang-Flow_0zgh6q8">
+        <di:waypoint x="370.0" y="117.0"/>
+        <di:waypoint x="430.0" y="117.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="6.0" x="397.0" y="107.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow_1fp17al" id="Yaoqiang-SequenceFlow_1fp17al">
+        <di:waypoint x="211.0" y="115.0"/>
+        <di:waypoint x="270.0" y="117.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="6.0" x="237.5" y="106.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0lbwl3l" id="Yaoqiang-Flow_0lbwl3l">
+        <di:waypoint x="690.0" y="117.0"/>
+        <di:waypoint x="752.0" y="115.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="6.0" x="718.0" y="106.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0i1skco" id="Yaoqiang-Flow_0i1skco">
+        <di:waypoint x="530.0" y="117.0"/>
+        <di:waypoint x="590.0" y="117.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.8" width="6.0" x="557.0" y="107.6"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
